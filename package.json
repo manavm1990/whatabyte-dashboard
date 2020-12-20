@@ -1,0 +1,58 @@
+{
+  "name": "node-starter-ts",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "description": "Node starter repo with TS",
+  "private": true,
+  "scripts": {
+    "start": "nodemon dist/bundle.js",
+    "watch": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manavm1990/node-starter"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "webpack"
+  ],
+  "author": "Manav Misra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manavm1990/node-starter/issues"
+  },
+  "homepage": "https://github.com/manavm1990/node-starter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@tsconfig/node12": "^1.0.7",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
