@@ -1,3 +1,19 @@
-const message = "Hello World";
+/**
+ * Required External Modules
+ */
 
-console.log(message);
+/**
+ * App Variables
+ */
+
+/**
+ *  App Configuration
+ */
+
+/**
+ * Server Activation
+ */
+
+/**
+ * Webpack HMR Activation
+ */
