@@ -1,6 +1,12 @@
-/**
- * As always...as always...delete 🔥 this directory 📁 if you not using ㊙️s.
- * Otherwise, you need a '.env' file (NOT
- * committed to your repo as per included '.gitignore' 😅) for this to work.
- * Maybe you need '@types/dotenv'❓
- */
+import { config } from "dotenv";
+import { TConfig } from "types";
+
+if (!config()) {
+  throw new Error("❗ No .env file 📁 found!");
+}
+
+const appConfig: TConfig = {
+  PORT: Number(process.env.PORT) || 3001,
+};
+
+export default appConfig;
