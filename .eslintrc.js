@@ -28,7 +28,7 @@ module.exports = {
     "import/no-unresolved": [
       1,
       {
-        ignore: ["api", "db", "interfaces", "lib"],
+        ignore: ["api", "config", "db", "interfaces", "lib", "types"],
       },
     ],
     "no-shadow": "off",
