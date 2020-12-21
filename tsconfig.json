@@ -7,6 +7,7 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": true,
+    "noImplicitThis": true,
     "outDir": "./dist/",
     "sourceMap": true,
     "strictNullChecks": true,

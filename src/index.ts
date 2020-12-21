@@ -1,19 +1,19 @@
-/**
- * Required External Modules
- */
+import cors from "cors";
+import * as dotenv from "dotenv";
+import express from "express";
+// Sensible HTTP Headers defaults
+import helmet from "helmet";
 
-/**
- * App Variables
- */
+dotenv.config();
 
-/**
- *  App Configuration
- */
+const app = express();
 
-/**
- * Server Activation
- */
+const PORT: number = Number(process.env.PORT) || 3000;
 
-/**
- * Webpack HMR Activation
- */
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+
+app.listen(PORT, () => {
+  console.log("Server 🏃🏾‍♂️", PORT);
+});
