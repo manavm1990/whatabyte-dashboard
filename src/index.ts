@@ -1,10 +1,10 @@
 import cors from "cors";
-import * as dotenv from "dotenv";
+import { config } from "dotenv";
 import express from "express";
 // Sensible HTTP Headers defaults
 import helmet from "helmet";
 
-dotenv.config();
+config();
 
 const app = express();
 
