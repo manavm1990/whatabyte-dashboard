@@ -1,3 +1,4 @@
+import api from "api";
 import config from "config";
 import cors from "cors";
 import express from "express";
@@ -14,4 +15,8 @@ app.use(express.json());
 // Activate server
 app.listen(config.PORT, async () => {
   console.info("Server 🏃🏾‍♂️", config.PORT);
+
+  const { body } = await api.index();
+
+  console.info("Data!", body);
 });
