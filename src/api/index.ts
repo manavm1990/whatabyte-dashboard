@@ -1,6 +1,6 @@
 import appConfig from "config";
 import got, { OptionsOfJSONResponseBody, Response } from "got";
-import { TItems, TUpdateItem } from "types";
+import { TItems, TUpdateItems } from "types";
 
 const {
   DB_CLIENT: { url, headers },
@@ -28,6 +28,7 @@ export default {
       throw new Error(error);
     }
   },
+
   async find(hashVals: number[]): Promise<Response> {
     try {
       return await got.post(url, {
@@ -37,6 +38,7 @@ export default {
           hash_values: hashVals,
           get_attributes: ["name", "price", "description", "imageUrl"],
         },
+        ...headersResponseType,
       });
     } catch (error) {
       console.error(error);
@@ -58,7 +60,8 @@ export default {
       throw new Error(error);
     }
   },
-  async update(data: TUpdateItem): Promise<Response> {
+
+  async update(data: TUpdateItems): Promise<Response> {
     try {
       return await got.post(url, {
         json: {
@@ -73,6 +76,7 @@ export default {
       throw new Error(error);
     }
   },
+
   async delete(hashVals: number[]): Promise<Response> {
     try {
       return await got.post(url, {
@@ -81,6 +85,7 @@ export default {
           operation: "delete",
           hash_values: hashVals,
         },
+        ...headersResponseType,
       });
     } catch (error) {
       console.error(error);

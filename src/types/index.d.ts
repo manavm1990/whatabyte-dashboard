@@ -15,12 +15,14 @@ export type TItem = {
   description: string;
   imageUrl: string;
 };
-export type TUpdateItem = {
-  id: number;
-  name?: string;
-  price?: number;
-  description?: string;
-  imageUrl?: string;
-};
+export type TUpdateItems = [
+  {
+    id: number;
+    name?: string;
+    price?: number;
+    description?: string;
+    imageUrl?: string;
+  }
+];
 
 export type TItems = TItem[];
