@@ -13,6 +13,10 @@ const appConfig: Readonly<TConfig> = {
       Authorization: process.env.INSTANCE_AUTH_HEADER,
     },
   },
+  AUTH: {
+    issuer: process.env.AUTH0_ISSUER,
+    audience: process.env.AUTH0_AUDIENCE,
+  },
 };
 
 export default appConfig;

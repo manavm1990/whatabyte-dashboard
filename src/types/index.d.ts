@@ -6,6 +6,10 @@ export type TConfig = {
       Authorization: string | undefined;
     };
   };
+  AUTH: {
+    issuer: string | undefined;
+    audience: string | undefined;
+  };
 };
 
 export type TItem = {

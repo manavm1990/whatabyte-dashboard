@@ -1,5 +1,6 @@
 import api from "api";
 import express, { Request, Response } from "express";
+import { auth } from "middleware";
 
 const router = express.Router();
 
@@ -27,6 +28,8 @@ router.get(
     }
   }
 );
+
+router.use(auth);
 
 // TODO: Handle case where req.body is already an Array 👇🏾.
 router.post("/", (req: Request, res: Response): void => {

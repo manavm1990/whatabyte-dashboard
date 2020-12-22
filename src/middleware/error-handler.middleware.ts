@@ -8,8 +8,7 @@ export default (
   // ⚠️ MUST specify 4th param for Express to id this as 'error handling' fxn.
   __: NextFunction
 ): void => {
-  const { statusCode } = error || 500;
-  const { message } = error || "💩 clucked up! 😞";
-
+  const statusCode = error.statusCode || error.status || 500;
+  const message = error.message || "💩 clucked up! 😞";
   response.status(statusCode).send(message);
 };
