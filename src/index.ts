@@ -19,4 +19,9 @@ app.use(notFound);
 // Activate server
 app.listen(config.PORT, async () => {
   console.info("Server 🏃🏾‍♂️", config.PORT);
+  console.log(
+    new Date(Date.now()).toLocaleTimeString("en-US", {
+      timeZone: "America/Chicago",
+    })
+  );
 });
