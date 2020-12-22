@@ -5,7 +5,7 @@ if (!config()) {
   throw new Error("❗ No .env file 📁 found!");
 }
 
-const appConfig: TConfig = {
+const appConfig: Readonly<TConfig> = {
   PORT: process.env.PORT || 3001,
   DB_CLIENT: {
     url: process.env.INSTANCE_URL,
