@@ -6,7 +6,13 @@ if (!config()) {
 }
 
 const appConfig: TConfig = {
-  PORT: Number(process.env.PORT) || 3001,
+  PORT: process.env.PORT || 3001,
+  DB_CLIENT: {
+    url: process.env.INSTANCE_URL,
+    headers: {
+      Authorization: process.env.INSTANCE_AUTH_HEADER,
+    },
+  },
 };
 
 export default appConfig;

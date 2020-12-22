@@ -12,6 +12,6 @@ app.use(cors());
 app.use(express.json());
 
 // Activate server
-app.listen(config.PORT, () => {
-  console.log("Server 🏃🏾‍♂️", config.PORT);
+app.listen(config.PORT, async () => {
+  console.info("Server 🏃🏾‍♂️", config.PORT);
 });

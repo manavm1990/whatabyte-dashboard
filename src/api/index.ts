@@ -1,8 +1,28 @@
-/**
- * If your API is simple, just dump all of the 'routes' in here.
- * If there are a few things going on,
- * you may want to create other files in this directory 📁
- * to export out each route (e.g. 'users.js', 'todos.js', etc.).
- *
- * You can 'absolutely import' this - or delete 🔥 if not using.
- */
+import appConfig from "config";
+import got, { Response } from "got";
+import { TItem, TItems } from "types";
+
+const {
+  DB_CLIENT: { url, headers },
+} = appConfig;
+
+export default {
+  async insert(data: TItem | TItems): Promise<Response> {
+    try {
+      console.log(data, "👋🏾");
+      return await got.post(url, {
+        json: {
+          operation: "insert",
+          schema: "dev",
+          table: "items",
+          records: data,
+        },
+        headers,
+        responseType: "json",
+      });
+    } catch (error) {
+      console.error(error);
+      throw new Error(error);
+    }
+  },
+};
