@@ -28,13 +28,27 @@ module.exports = {
     "import/no-unresolved": [
       1,
       {
-        ignore: ["api", "config", "db", "interfaces", "lib", "types"],
+        ignore: [
+          "api",
+          "config",
+          "db",
+          "interfaces",
+          "lib",
+          "middleware",
+          "types",
+        ],
       },
     ],
     "import/prefer-default-export": 1,
     "no-shadow": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-shadow": ["error"],
-    "@typescript-eslint/no-unused-vars": 2,
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      },
+    ],
   },
 };

@@ -1,5 +1,7 @@
 import { TItems } from "types";
 
+export { default } from "./HttpException";
+
 export const data: TItems = [
   {
     id: 1,
