@@ -12,7 +12,9 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+
 app.use("/menu", router);
+
 app.use(errorHandler);
 app.use(notFound);
 
