@@ -3,7 +3,7 @@ import cors from "cors";
 import express from "express";
 // Sensible HTTP Headers defaults
 import helmet from "helmet";
-import { errorHandler, notFound } from "middleware";
+import { handleError, handleNotFound } from "middleware";
 import router from "./routes";
 
 const app = express();
@@ -15,8 +15,8 @@ app.use(express.json());
 
 app.use("/menu", router);
 
-app.use(errorHandler);
-app.use(notFound);
+app.use(handleError);
+app.use(handleNotFound);
 
 // Activate server
 app.listen(config.PORT, async () => {
